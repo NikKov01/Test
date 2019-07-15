@@ -68,6 +68,178 @@ for (n=0; n<16; n++) {
   document.write("<br>");
 }
 
+</script>
+<br>
+<br>
+<script>
+  var mass=[]; var mass1=[]; var mass2=[]; var mass3=[];
+  document.write("Random array:");
+  function randomize(min,max) {
+    r = min + Math.floor(Math.random()*(max + 1-min));
+    return r;
+  }
+for (n=0; n<16; n++) {
+  mass[n]=randomize(-100,100);
+  document.write(mass[n]+"  ");
+}
+document.write("<br>");
+mass3=mass.sort(function(a,b){
+  return a-b;
+});
+for (n=0; n<mass3.length; n++) {
+  document.write(mass3[n]+"  ");
+}
+mass.forEach(function(item) {
+  
+  if (item<0){
+    mass1.push(item);
+  }
+  else {
+    mass2.push(item);
+  }
+});
+document.write("<br>");
+for (n=0; n<mass1.length; n++) {
+  document.write(mass1[n]+"  ");
+  }
+document.write("<br>");
+for (n=0; n<mass2.length; n++) {
+  document.write(mass2[n]+"  ");
+}
+document.write("<br>");
+function random_str(length){
+  var result = '';
+  var charset = 'abcdefgijklmnopqrstuvwyz0123456789';
+  var charset__length = charset.length;
+  for (i=0; i<length;i++){
+    result +=charset.charAt(Math.floor(Math.random()*charset__length));
+  }
+  return result;
+}
+var arr__char1=[]; var arr__char2=[]; var arr__char3=[];
+str=random_str(100);
+document.write(str);
+arr=str.split('');
+arr.forEach(function (item) {
+  if (item=='p') {
+    arr__char1.push(item);
+  }
+   if (item=='w') {
+    arr__char2.push(item);
+  }
+     if (item=='v') {
+    arr__char3.push(item);
+  }
+});
+document.write("<br>");
+document.write(arr__char1.length + ' '+ arr__char2.length + ' '+ arr__char3.length);
+</script>
+
+<script>
+const array_img=new Array(['*','*','*','*','*','*','*','*'],
+                          ['*','*','*','*','*','*','*','*'],
+                          ['*','*','_','_','_','_','*','*'],
+                          ['*','*','_','_','_','_','*','*'],
+                          ['*','*','_','_','_','_','*','*'],
+                          ['*','*','_','_','_','_','*','*'],
+                          ['*','*','*','*','*','*','*','*'],
+                          ['*','*','*','*','*','*','*','*']);
+document.write("<br>");
+for (n=0; n<array_img.length; n++) {
+  document.write("<br>");
+  for (k=0; k<array_img[n].length;k++){
+ document.write(array_img[n][k]);
+}}
+
+function doublesize(array) {
+  const array__rs=[];
+  const array__s=[];
+  for (i=0; i<array_img.length; i++){
+    array__s[i]=[];
+    for (j=(array_img[i].length/2); j<array_img[i].length; j++){
+      array__s[i].splice(j,0,array_img[i][j],array_img[i][j]);
+    }
+    array__rs.push(array__s[i]);
+    for (j=(array_img[i].length/2-1); j>=0; j--){
+      array__s[i].splice(0,0,array_img[i][j],array_img[i][j]);
+    }
+    array__rs.push(array__s[i]);
+  }
+  function display_mass (array__rs){
+    document.write("<br>");
+    for (n=0; n<array__rs.length; n++) {
+      document.write("<br>");
+      for (k=0; k<array__rs[n].length;k++){
+      document.write(array__rs[n][k]);
+    }}  
+  }
+
+  return display_mass(array__rs);
+}
+
+/*var array_d=[];
+array_d = doublesize(array_img);
+document.write("<br>");
+for (n=0; n<array_d.length; n++) {
+  document.write("<br>");
+  for (k=0; k<array_d[n].length;k++){
+  document.write(array_d[n][k]);
+}} */
+
+doublesize(array_img);
+document.write("<br>");
+
+var mass=[]; var mass1=[]; var mass2=[];
+function randomize(min,max) {
+  r = min + Math.floor(Math.random()*(max + 1-min));
+  return r;
+}
+
+for (n=0; n<16; n++) {
+  mass1[n]=randomize(-10,10);
+  document.write(mass1[n] + " ");
+}
+document.write("<br>");
+for (n=0; n<16; n++) {
+  mass2[n]=randomize(-10,10);
+  document.write(mass2[n] + "  ");
+}
+
+document.write("<br>");
+function array_cross(array1,array2){
+  array1 = array1.sort(function(a,b){
+  return a-b;
+  });
+  array2 = array2.sort(function(a,b){
+  return a-b;
+  });
+  var array=[];
+  var c=0;
+  for (i=0; i<array1.length; i++) {
+    var k=0; var j=0;
+    while (array2[j]!==array1[i] && j<array2.length){
+      j++
+    }
+    while (array[k]!==array1[i] && k<c){
+      k++
+    }
+      if (j!=array2.length && k==c){
+        array[c++]=array1[i]
+      }
+  }
+    function display_mass(array) {
+    document.write("<br>");
+    for (n=0; n<array.length; n++) {  
+    document.write(array[n] + " ");
+    }
+  } 
+  return display_mass(array);
+}
+array_cross(mass1,mass2);
+var array_1 = [[cats,6][dogs,8][flowers,10][pens,12]];
+var array_2 = [[pulls,21][dogs,16][rw7l,10][pens,9]];
+var obj = {};
+
 
 </script>
 </body>
